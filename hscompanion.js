@@ -49,7 +49,7 @@ if (hussiecomment){
 }
 
 // add keyboard controls for navigation
-document.onkeydown = function(e) {
+document.onkeyup = function(e) {
   switch (e.keyCode) {
     case 37:
       //If you are not playing a walkaround, change page
