@@ -1,7 +1,6 @@
-//Here we get the page number so we know what request to make
-var url = window.location.pathname.split('/');
-var page = url.pop() || url.pop(); //This deals with trailing slashes
-var adv = url.pop();
+var pathname = window.location.pathname.split('/', 3); // e.g. /story/123/ becomes ['', 'story', '123']
+var page = pathname[2];
+var adv = pathname[1];
 
 // for title pages
 if (page == undefined){
