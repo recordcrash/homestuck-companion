@@ -1,12 +1,3 @@
-var pathname = window.location.pathname.split('/', 3); // e.g. /story/123/ becomes ['', 'story', '123']
-var page = pathname[2];
-var adv = pathname[1];
-
-// for title pages
-if (page == undefined){
-  page = 1;
-}
-
 // TODO: retrieve value from options
 var hussiecomment = true;
 
@@ -30,6 +21,15 @@ function addContentToPage(content) {
 }
 
 if (hussiecomment){
+  var pathname = window.location.pathname.split('/', 3); // e.g. /story/123/ becomes ['', 'story', '123']
+  var page = pathname[2];
+  var adv = pathname[1];
+
+  // for title pages
+  if (page == undefined){
+    page = 1;
+  }
+
   fetch('https://recordcrash.com:3141/' + adv + '/' + page)
     .then(data => data.json())
     .then(content => {
