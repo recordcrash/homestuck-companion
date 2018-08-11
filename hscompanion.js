@@ -10,50 +10,35 @@ if (page == undefined){
 // TODO: retrieve value from options
 var hussiecomment = true;
 
+function addContentToPage(content) {
+  // create a new row of content to the bottom of the page
+  var row = document.createElement("div");
+  row.className = "row bg-hs-gray bg-light-gray--md pad-b-md pad-b-lg--md pos-r"; // from homestuck page
+  var card = document.createElement("div");
+  card.className = "mar-x-auto disp-bl bg-hs-gray pad-t-lg";
+  card.style = "max-width:650px;";
+  var container = document.createElement("p");
+  container.className = "o-story_text type-rg type-hs-small--md type-center line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg";
+
+  // consider using innerHTML so that in future images can be added
+  container.textContent = content;
+
+  // add to page
+  card.appendChild(container);
+  row.appendChild(card);
+  document.getElementsByClassName("pos-r")[0].appendChild(row);
+}
+
 if (hussiecomment){
   fetch('https://recordcrash.com:3141/' + adv + '/' + page)
     .then(data => data.json())
-    .then(datajson => {
-      if ((datajson[0].commentary != null)){
-        //If there's actually commentary for that page, we try to create the container
-        //We create the div we're going to embed in the page based on homestuck.com standards
-
-        var son = document.createElement("div");
-        son.className = "row bg-hs-gray bg-light-gray--md pad-b-md pad-b-lg--md pos-r";
-        var sonsson = document.createElement("div");
-        sonsson.className = "mar-x-auto disp-bl bg-hs-gray pad-t-lg";
-        sonsson.style = "max-width:650px;";
-        var commentary = document.createElement("p");
-        commentary.className = "o-story_text type-rg type-hs-small--md type-center line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg";
-
-        //We add the commentary to it (Note to self: look into just doing a secure innerHTML so we can add images in the future)
-        commentary.textContent = datajson[0].commentary;
-
-        //And now we add the commentary container to the div, the div to the other div, etc
-        sonsson.appendChild(commentary);
-        son.appendChild(sonsson);
-        document.getElementsByClassName("pos-r")[0].appendChild(son);
+    .then(content => {
+      if ((content[0].commentary != null)){
+        addContentToPage(content[0].commentary);
       }
 
-      if ((datajson[0].notes != null)){
-        //If there's actually notes for that page, we try to create the container
-        //We create the div we're going to embed in the page based on homestuck.com standards
-
-        var son = document.createElement("div");
-        son.className = "row bg-hs-gray bg-light-gray--md pad-b-md pad-b-lg--md pos-r";
-        var sonsson = document.createElement("div");
-        sonsson.className = "mar-x-auto disp-bl bg-hs-gray pad-t-lg";
-        sonsson.style = "max-width:650px;";
-        var notes = document.createElement("p");
-        notes.className = "o-story_text type-rg type-hs-small--md type-center line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg";
-
-        //We add the notes to it (Note to self: stop repeating comments)
-        notes.textContent = datajson[0].notes;
-
-        //And now we add the notes container to the div, the div to the other div, etc
-        sonsson.appendChild(notes);
-        son.appendChild(sonsson);
-        document.getElementsByClassName("pos-r")[0].appendChild(son);
+      if ((content[0].notes != null)){
+        addContentToPage(content[0].notes);
       }
     })
     .catch(error => {
