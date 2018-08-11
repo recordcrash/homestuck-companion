@@ -48,18 +48,26 @@ if (hussiecomment){
     });
 }
 
+function currentlyInWalkaround() {
+  var activeElement = document.activeElement;
+  return activeElement.id === "SBURBStage" || activeElement.type === "application/x-shockwave-flash";
+}
+
 // add keyboard controls for navigation
 document.onkeyup = function(e) {
   switch (e.keyCode) {
     case 37:
-      //If you are not playing a walkaround, change page
-      if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
-        document.getElementsByClassName("o_game-nav-item")[1].lastElementChild.click();
+      // Left arrow key
+      if(!currentlyInWalkaround()) {
+        var goBackButton = document.getElementsByClassName("o_game-nav-item")[1].lastElementChild;
+        goBackButton.click();
       }
       break;
     case 39:
-      if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
-        document.getElementsByClassName("o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md mar-b-lg")[0].lastElementChild.children[1].click();
+      // Right arrow key
+      if(!currentlyInWalkaround()) {
+        var nextPageButton = document.getElementsByClassName("o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md mar-b-lg")[0].lastElementChild.children[1];
+        nextPageButton.click();
       }
       break;
   }
