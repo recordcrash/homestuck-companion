@@ -44,11 +44,11 @@ if (hussiecomment){
     .catch(error => {
       if (error instanceof TypeError)
         console.log("[HOMESTUCK COMPANION] There is no commentary available for this page yet, but there may be in the future. Support the official book releases!");
-      //or if there's an error remove the container
+      // or if there's an error remove the container
     });
 }
 
-//Keyboard controls
+// add keyboard controls for navigation
 document.onkeydown = function(e) {
   switch (e.keyCode) {
     case 37:
