@@ -37,6 +37,7 @@ function requestCommentary() {
 				sonsson.style = "max-width:650px;";
 				var commentary = document.createElement("p");
 				commentary.className = "o-story_text type-rg type-hs-small--md type-center line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg";
+        commentary.style = "white-space:pre-line;";
 
 				//We add the commentary to it (Note to self: look into just doing a secure innerHTML so we can add images in the future)
 				commentary.textContent = datajson[0].commentary;
@@ -58,6 +59,7 @@ function requestCommentary() {
 				sonsson.style = "max-width:650px;";
 				var notes = document.createElement("p");
 				notes.className = "o-story_text type-rg type-hs-small--md type-center line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg";
+        notes.style = "white-space:pre-line;";
 
 				//We add the notes to it (Note to self: stop repeating comments)
 				notes.textContent = datajson[0].notes;
