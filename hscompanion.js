@@ -80,18 +80,20 @@ function requestCommentary() {
 
 document.onkeydown = function(e) {
     switch (e.keyCode) {
-    	case 17:
-    		if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
+    	case 17: //either ctrl key
+    		if(e.location == 2){ //restricts key to right ctrl
+    			if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
             	document.getElementsByClassName("o_chat-log-btn")[0].click();
+        		}
         	}
     		break;
-        case 37:
+        case 37: //left arrow
         	//If you are not playing a walkaround, change page
         	if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
             	document.getElementsByClassName("o_game-nav-item")[1].lastElementChild.click();
         	}
             break;
-        case 39:
+        case 39: //right arrow
         	if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
             	document.getElementsByClassName("o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md mar-b-lg")[0].lastElementChild.children[1].click();
             }
