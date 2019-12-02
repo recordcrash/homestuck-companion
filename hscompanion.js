@@ -98,7 +98,9 @@ document.onkeydown = function(e) {
             break;
         case 39: //right arrow
         	if (document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
-				document.getElementsByClassName("disp-ib")[1].firstElementChild.click();
+				if (window.location.hostname != "homestuck2.com") { // site-specific workaround - for some reason, `click()`ing both elements doesn't work on Homestuck^2
+					document.getElementsByClassName("disp-ib")[1].firstElementChild.click();
+				}
 				document.getElementsByClassName("o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md")[0].lastElementChild.children[1].click();  // This also handles the Epilogues if we remove the last class `mar-b-lg` (Epilogues use `pad-b`lg`).
 			}
             break;
