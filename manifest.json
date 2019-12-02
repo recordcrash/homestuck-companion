@@ -18,8 +18,13 @@
 
   "content_scripts": [
     {
-      "matches": ["*://www.homestuck.com/problem-sleuth/*", "*://www.homestuck.com/story/*",
-      "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/story"],
+      "matches": [
+        "*://www.homestuck.com/story","*://www.homestuck.com/story/*",
+        "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/problem-sleuth/*",
+        "*://www.homestuck.com/jailbreak", "*://www.homestuck.com/jailbreak/*",
+        "*://www.homestuck.com/ryanquest", "*://www.homestuck.com/ryanquest/*",
+        "*://homestuck2.com/", "*://homestuck2.com/story", "*://homestuck2.com/story/*"
+      ],
       "js": [
         "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
         "hscompanion.js"
@@ -32,11 +37,9 @@
   },
 
   "permissions": [
-  "*://recordcrash.com/*",
-  "webRequest",
-  "storage"
+    "*://recordcrash.com/*",
+    "webRequest",
+    "storage"
   ]
-
-
 
 }
