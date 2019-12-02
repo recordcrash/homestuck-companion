@@ -1,5 +1,4 @@
 {
-
   "description": "Adds commentary, keyboard navigation and useful info to the pages of Homestuck.com stories.",
   "manifest_version": 2,
   "name": "Homestuck Companion",
@@ -23,6 +22,7 @@
         "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/problem-sleuth/*",
         "*://www.homestuck.com/jailbreak", "*://www.homestuck.com/jailbreak/*",
         "*://www.homestuck.com/ryanquest", "*://www.homestuck.com/ryanquest/*",
+        "*://www.homestuck.com/sweet-bro-and-hella-jeff", "*://www.homestuck.com/sweet-bro-and-hella-jeff/*",
         "*://www.homestuck.com/epilogues", "*://www.homestuck.com/epilogues/*",
         "*://homestuck2.com/", "*://homestuck2.com/story", "*://homestuck2.com/story/*"
       ],
@@ -42,5 +42,4 @@
     "webRequest",
     "storage"
   ]
-
 }
