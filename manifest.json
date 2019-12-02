@@ -23,6 +23,7 @@
         "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/problem-sleuth/*",
         "*://www.homestuck.com/jailbreak", "*://www.homestuck.com/jailbreak/*",
         "*://www.homestuck.com/ryanquest", "*://www.homestuck.com/ryanquest/*",
+        "*://www.homestuck.com/epilogues", "*://www.homestuck.com/epilogues/*",
         "*://homestuck2.com/", "*://homestuck2.com/story", "*://homestuck2.com/story/*"
       ],
       "js": [

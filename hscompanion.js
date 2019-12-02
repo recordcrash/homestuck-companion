@@ -97,7 +97,7 @@ document.onkeydown = function(e) {
             break;
         case 39: //right arrow
         	if(document.activeElement.id != "SBURBStage" && document.activeElement.type != "application/x-shockwave-flash") {
-            	document.getElementsByClassName("o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md mar-b-lg")[0].lastElementChild.children[1].click();
+            	document.getElementsByClassName("o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md")[0].lastElementChild.children[1].click();  // This also handles the Epilogues if we remove the last class `mar-b-lg` (Epilogues use `pad-b`lg`).
             }
             break;
     }
