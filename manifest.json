@@ -2,7 +2,7 @@
   "description": "Adds commentary, keyboard navigation and useful info to the pages of Homestuck.com stories.",
   "manifest_version": 2,
   "name": "Homestuck Companion",
-  "version": "0.4.13",
+  "version": "0.6.12",
   "homepage_url": "https://addons.mozilla.org/en-US/firefox/addon/homestuck-companion/",
   "icons": {
     "48": "icons/border-48.png"
