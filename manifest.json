@@ -1,5 +1,4 @@
 {
-
   "description": "Adds commentary, keyboard navigation and useful info to the pages of Homestuck.com stories.",
   "manifest_version": 2,
   "name": "Homestuck Companion",
@@ -18,8 +17,15 @@
 
   "content_scripts": [
     {
-      "matches": ["*://www.homestuck.com/problem-sleuth/*", "*://www.homestuck.com/story/*",
-      "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/story"],
+      "matches": [
+        "*://www.homestuck.com/story","*://www.homestuck.com/story/*",
+        "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/problem-sleuth/*",
+        "*://www.homestuck.com/jailbreak", "*://www.homestuck.com/jailbreak/*",
+        "*://www.homestuck.com/ryanquest", "*://www.homestuck.com/ryanquest/*",
+        "*://www.homestuck.com/sweet-bro-and-hella-jeff", "*://www.homestuck.com/sweet-bro-and-hella-jeff/*",
+        "*://www.homestuck.com/epilogues", "*://www.homestuck.com/epilogues/*",
+        "*://homestuck2.com/", "*://homestuck2.com/story", "*://homestuck2.com/story/*"
+      ],
       "js": [
         "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
         "hscompanion.js"
@@ -32,11 +38,8 @@
   },
 
   "permissions": [
-  "*://recordcrash.com/*",
-  "webRequest",
-  "storage"
+    "*://recordcrash.com/*",
+    "webRequest",
+    "storage"
   ]
-
-
-
 }
