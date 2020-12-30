@@ -1,9 +1,9 @@
 {
-  "description": "Adds commentary, keyboard navigation and useful info to the pages of Homestuck.com stories.",
+  "description": "Adds commentary, keyboard navigation and useful info to the pages of Homestuck.com stories. DEPRECATED as of 2021 due to Homestuck.com's state. The Unofficial Homestuck Collection will replace it.",
   "manifest_version": 2,
   "name": "Homestuck Companion",
-  "version": "0.6.12",
-  "homepage_url": "https://addons.mozilla.org/en-US/firefox/addon/homestuck-companion/",
+  "version": "1.0",
+  "homepage_url": "https://homestuck.net/companion.html",
   "icons": {
     "48": "icons/border-48.png"
   },
@@ -14,7 +14,9 @@
       "installation.js"
     ]
   },
-
+  "web_accessible_resources": [
+    "commentary.json"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -39,7 +41,6 @@
   },
 
   "permissions": [
-    "*://recordcrash.com/*",
     "webRequest",
     "storage"
   ]
