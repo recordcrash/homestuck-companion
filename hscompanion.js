@@ -3,6 +3,29 @@ var url = window.location.pathname.split("/");
 var page = url.pop() || url.pop(); //This deals with trailing slashes
 var adv = url.pop();
 
+const tuhc_redirections = {
+  "homestuck.com": [
+    [/^\/story\/(=?\d+)$/, 'mspa://homestuck/$1']
+  ]
+}
+
+browser.storage.local.get("notuhc").then(result => {
+  if (!result.notuhc) {
+    try {
+      let matched = false
+      tuhc_redirections[window.location.host.replace(/^www\./, '')].forEach(tup => {
+        let [matcher, repl] = tup
+        if (matched || !matcher.exec(window.location.pathname)) return
+        let result = window.location.pathname.replace(matcher, repl)
+        console.log(result)
+        window.location = result
+      })
+    } catch {
+      console.warning("No redirection in table", tuhc_redirections, "for location", window.location)
+    }
+  }
+})
+
 //Handling title pages
 
 if (page === "story" || page === "problem-sleuth") {
