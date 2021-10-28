@@ -1,11 +1,7 @@
-//Here we get the page number so we know what request to make
-var url = window.location.pathname.split("/");
-var page = url.pop() || url.pop(); //This deals with trailing slashes
-var adv = url.pop();
-
 const tuhc_redirections = {
   "homestuck.com": [
-    [/^\/story\/(=?\d+)$/, 'mspa://homestuck/$1']
+    [/^\/story\/(=?\d+)$/, 'mspa://homestuck/$1'],
+    ['^\/credits/', 'mspa://credits'], // not yet in manifest
   ]
 }
 
@@ -25,6 +21,12 @@ browser.storage.local.get("notuhc").then(result => {
     }
   }
 })
+
+//Here we get the page number so we know what request to make
+var url = window.location.pathname.split("/");
+var page = url.pop() || url.pop(); //This deals with trailing slashes
+var adv = url.pop();
+
 
 //Handling title pages
 
