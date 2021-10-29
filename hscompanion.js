@@ -1,7 +1,12 @@
 const tuhc_redirections = {
   "homestuck.com": [
-    [/^\/story\/(=?\d+)$/, 'mspa://homestuck/$1'],
-    ['^\/credits/', 'mspa://credits'], // not yet in manifest
+    [/^\/story(\/(=?\d+))*/, 'mspa://homestuck/$2'],
+    [/^\/problem-sleuth(\/(=?\d+))*/, 'mspa://problem-sleuth/$2'],
+    [/^\/ryanquest(\/(=?\d+))*/, 'mspa://ryanquest/$2'],
+    [/^\/bard-quest(\/(=?\d+))*/, 'mspa://bard-quest/$2'],
+    [/^\/jailbreak(\/(=?\d+))*/, 'mspa://jailbreak/$2'],
+    [/^\/sweet-bro-and-hella-jeff(\/(=?\d+))*/, 'mspa://sweetbroandhellajeff/$2'],
+    [/^\/credits//, 'mspa://credits'], // not yet in manifest
   ]
 }
 
