@@ -2,6 +2,7 @@ function handleInstallation(detail) {
   function setDefaultOptions() {
     browser.storage.local.set({
       hussiecomment: true
+      notuhc: false
     });
   }
 
