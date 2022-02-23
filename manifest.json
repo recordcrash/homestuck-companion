@@ -1,8 +1,8 @@
 {
-  "description": "Adds commentary, keyboard navigation and useful info to the pages of Homestuck.com stories. DEPRECATED as of 2021 due to Homestuck.com's state. The Unofficial Homestuck Collection will replace it.",
+  "description": "Adds commentary and improves Homestuck.com, and redirects its links to The Unofficial Homestuck Collection, if installed.",
   "manifest_version": 2,
   "name": "Homestuck Companion",
-  "version": "1.0",
+  "version": "2.0",
   "homepage_url": "https://homestuck.net/companion.html",
   "icons": {
     "48": "icons/border-48.png"
@@ -20,7 +20,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.homestuck.com/story","*://www.homestuck.com/story/*",
+        "*://www.homestuck.com/story","*://www.homestuck.com/story/*", "*://www.homestuck.com/credits",
         "*://www.homestuck.com/problem-sleuth", "*://www.homestuck.com/problem-sleuth/*",
         "*://www.homestuck.com/jailbreak", "*://www.homestuck.com/jailbreak/*",
         "*://www.homestuck.com/ryanquest", "*://www.homestuck.com/ryanquest/*",

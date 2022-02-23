@@ -6,7 +6,7 @@ const tuhc_redirections = {
     [/^\/bard-quest(\/(=?\d+))*/, 'mspa://bard-quest/$2'],
     [/^\/jailbreak(\/(=?\d+))*/, 'mspa://jailbreak/$2'],
     [/^\/sweet-bro-and-hella-jeff(\/(=?\d+))*/, 'mspa://sweetbroandhellajeff/$2'],
-    [/^\/credits\//, 'mspa://credits'] // not yet in manifest
+    [/^\/credits/, 'mspa://credits']
   ]
 }
 
@@ -113,26 +113,6 @@ function requestCommentary() {
           console.log(
             "[HOMESTUCK COMPANION] There is no commentary available for this page yet, but there may be in the future. Support the official book releases!"
 		  );
-		  
-		  var son = document.createElement("div");
-          son.id = "notes";
-          son.className =
-            "row bg-hs-gray bg-light-gray--md pad-b-md pad-b-lg--md pos-r";
-          var sonsson = document.createElement("div");
-          sonsson.className = "mar-x-auto disp-bl bg-hs-gray pad-t-lg";
-          sonsson.style = "max-width:650px;";
-          var notes = document.createElement("p");
-          notes.className =
-            "o-story_text type-rg type-hs-small--md type-center line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg";
-          notes.style = "white-space:pre-line;";
-
-          //We add the notes to it (Note to self: stop repeating comments)
-          notes.innerHTML = '<div><p>The Homestuck Companion Extension has been deprecated as of 2021, and will be delisted in 2022. You are highly encouraged to uninstall it and <a href="https://bambosh.github.io/unofficial-homestuck-collection/">check this out instead</a>: <a href="https://bambosh.github.io/unofficial-homestuck-collection/"><img src="https://bambosh.github.io/unofficial-homestuck-collection/images/collection_logo.png"/></a></p><p>Not only does it offer better user experience than Homestuck.com, including Flash animations, but it will have a mod in the near future that will completely replace this extension, and be updated with future commentary, if any. Stay tuned for news <a href="https://homestuck.net/collection.html">here</a>.</p></div>';
-
-          //And now we add the notes container to the div, the div to the other div, etc
-          sonsson.appendChild(notes);
-          son.appendChild(sonsson);
-          document.getElementsByClassName("pos-r")[0].appendChild(son);
       }); //or if there's an error remove the container
   }
 }
