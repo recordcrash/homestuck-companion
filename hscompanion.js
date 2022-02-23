@@ -6,7 +6,7 @@ const tuhc_redirections = {
     [/^\/bard-quest(\/(=?\d+))*/, 'mspa://bard-quest/$2'],
     [/^\/jailbreak(\/(=?\d+))*/, 'mspa://jailbreak/$2'],
     [/^\/sweet-bro-and-hella-jeff(\/(=?\d+))*/, 'mspa://sweetbroandhellajeff/$2'],
-    [/^\/credits//, 'mspa://credits'], // not yet in manifest
+    [/^\/credits\//, 'mspa://credits'] // not yet in manifest
   ]
 }
 
@@ -14,13 +14,16 @@ browser.storage.local.get("notuhc").then(result => {
   if (!result.notuhc) {
     try {
       let matched = false
-      tuhc_redirections[window.location.host.replace(/^www\./, '')].forEach(tup => {
-        let [matcher, repl] = tup
-        if (matched || !matcher.exec(window.location.pathname)) return
-        let result = window.location.pathname.replace(matcher, repl)
-        console.log(result)
-        window.location = result
-      })
+      const matchers = tuhc_redirections[window.location.host.replace(/^www\./, '')]
+      for (const i in matchers) {
+        let [matcher, repl] = matchers[i]
+        if (matcher.exec(window.location.pathname)) {
+          let result = window.location.pathname.replace(matcher, repl)
+          console.log(result)
+          window.location = result
+          return
+        }
+      }
     } catch {
       console.warning("No redirection in table", tuhc_redirections, "for location", window.location)
     }
